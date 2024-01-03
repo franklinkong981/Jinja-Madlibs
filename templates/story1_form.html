@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Story 1 Form</title>
+    </head>
+    <body>
+        <h1>Madlibs</h1>
+        <form action="/story1-result">
+            {% for placeholder in placeholders_list %}
+                <label for="{{placeholder}}-text">{{placeholder}}: </label>
+                <input id="{{placeholder}}-text" type="text" name="{{placeholder}}"/>
+                <br>
+            {% endfor %}
+            <button>Submit</button>
+        </form>
+    </body>
+</html>

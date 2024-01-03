@@ -4,8 +4,7 @@
 class Story:
     """Madlibs story.
 
-    To  make a story, pass a list of prompts, and the text
-    of the template.
+    To  make a story, pass a list of placeholder words and the text of the template.
 
         >>> s = Story(["noun", "verb"],
         ...     "I love to {verb} a good {noun}.")
@@ -18,27 +17,27 @@ class Story:
         'I love to eat a good mango.'
     """
 
-    def __init__(self, words, text):
-        """Create story with words and template text. prompts = list of placeholder words. template = String with placeholder words in {}."""
+    def __init__(self, placeholders, template):
+        """Create story with words and template text. ."""
 
-        self.prompts = words
-        self.template = text
+        self.placeholders = placeholders
+        self.template = template
 
-    def generate(self, answers):
+    def generate(self, placeholders_and_values):
         """Substitute answers into text."""
 
-        text = self.template
+        completed_story = self.template
 
-        for (key, val) in answers.items():
-            text = text.replace("{" + key + "}", val)
+        for (placeholder, value) in placeholders_and_values.items():
+            completed_story = completed_story.replace("{" + placeholder + "}", value)
 
-        return text
+        return completed_story
 
 
 # Here's a story to get you started
 
 
-story = Story(
+story1 = Story(
     ["place", "noun", "verb", "adjective", "plural_noun"],
     "Once upon a time in a long-ago {place}, there lived a large {adjective} {noun}. It loved to {verb} {plural_noun}."
 )
