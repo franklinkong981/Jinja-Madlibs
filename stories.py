@@ -41,3 +41,13 @@ story1 = Story(
     ["place", "noun", "verb", "adjective", "plural_noun"],
     "Once upon a time in a long-ago {place}, there lived a large {adjective} {noun}. It loved to {verb} {plural_noun}."
 )
+
+story2 = Story(
+    ["noun", "adjective", "second adjective", "person", "verb"],
+    "There once was a {noun} that was so {adjective} and {second adjective} that {person} ended up {verb}ing it."
+)
+
+story3 = Story(
+    ["adjective", "second adjective", "person"],
+    "Here's a fun fact: {adjective} and {second adjective} are {person}'s favorite words."
+)

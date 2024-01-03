@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
+{% block title %}Story Form {% endblock %}
+
 {% block content %}
-    <h2>Story 1</h2>
-    <form action="/story1-result">
+    <h2>Story {{story_number}}</h2>
+    <form action="/story-result/{{story}}">
         {% for placeholder in placeholders_list %}
             <label for="{{placeholder}}-text">{{placeholder}}: </label>
             <input id="{{placeholder}}-text" type="text" name="{{placeholder}}"/>
